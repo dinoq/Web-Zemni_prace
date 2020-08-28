@@ -1,0 +1,9 @@
+
+$c: red;
+$c2: rgb(89, 22, 196);
+.container-fluid{
+    background-color: $c;
+    .btn{
+        background-color: $c2;
+    }
+}
