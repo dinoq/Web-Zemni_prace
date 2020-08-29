@@ -1,9 +1,86 @@
 
-$c: red;
-$c2: rgb(89, 22, 196);
-.container-fluid{
-    background-color: $c;
-    .btn{
-        background-color: $c2;
+$transition_time: 0.5s;
+$h1: 70px;
+$h2: 50px;
+
+@mixin transition_all($time) {
+    -webkit-transition: all $time;
+    -moz-transition: all $time;
+    -o-transition: all $time;
+    transition: all $time;
+}
+body{
+    height: 2000px;
+    background-color: rgb(199, 200, 235);
+    letter-spacing: 1px;
+
+    nav{
+        font-family: Georgia, Times, "Times New Roman", serif;
+        @include transition_all($transition_time);
+        .navbar-brand{     
+            font-family: Impact;       
+            @include transition_all($transition_time);
+        }
+        .brand-expanded{
+            font-size: 1.5rem;
+        }
+        .brand-shrinked{
+            font-size: 1rem;
+        }   
+
+        #nav-ul{
+            @include transition_all($transition_time);
+            margin: 0 auto; 
+            .nav-link{
+                @include transition_all($transition_time/4);
+            }
+
+            .nav-link:hover, .active{
+                background-color: #FF8800;
+                border-radius: .25rem;
+            }
+        }
+
+        .navbar-expanded{
+            height: 78px;  
+            margin-right: 40% !important;  
+
+            .nav-item{    
+                margin: 0 20px;    
+                .nav-link{
+                    padding: calc((70px - 1rem) / 2) .5rem;
+                }
+            }
+        }
+        .navbar-shrinked{
+            height: 58px;  
+            margin-right: 30px !important;      
+            .nav-item{    
+                margin: 0 4px;          
+                .nav-link{
+                    padding: calc((50px - 1rem) / 2) .5rem;
+                }
+            }
+        }  
     }
+
+    #home-div{
+        min-height: 1000px; //smazat
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/bg1.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        offset-position: 50px;
+        color: white;
+        h1{
+            font-family: Impact;
+        }
+        .btn-primary{
+            background-color: #FF8800;
+            border-radius: .25rem;
+            display: block;
+        }
+    }
+
 }
