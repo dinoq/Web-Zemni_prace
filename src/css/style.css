@@ -7,7 +7,6 @@ html h1 {
 }
 
 html body {
-  height: 4000px;
   background-color: #E1E1E1;
   letter-spacing: 1px;
 }
@@ -117,16 +116,11 @@ html body main #article_content {
   margin-top: 20px;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 1.25rem;
-}
-
-html body main #about #article_content {
-  margin-top: 20px;
   border: solid;
   border-radius: 30px;
   border-color: #80501A;
   border-width: 5px;
-  max-width: 50%;
-  padding: 5px;
+  padding: 10px;
 }
 
 html body main #about #article_content p {
@@ -137,5 +131,20 @@ html body main #about #article_content p {
 html body footer {
   color: #fff;
   background-color: #1E1E1E;
+  margin-top: 30px;
+}
+
+html body footer h1, html body footer h2 {
+  color: #FF8800;
+}
+
+html body footer ul {
+  margin-top: 4rem;
+  list-style-type: none;
+  font-size: 1.5rem;
+}
+
+html body footer form textarea {
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
