@@ -16,6 +16,17 @@ html{
     h1{
         font-family: Impact;
     }
+
+    .btn-primary{
+        //width: 30%;
+        border-radius: 5px;
+        border: none;
+        color: white;
+        font-weight: bold;
+        background-color: #ff8800;
+        font-size: 1.25rem;
+        padding: 5px;
+    }
     body{
         background-color: #E1E1E1;
         letter-spacing: 1px;
@@ -85,8 +96,6 @@ html{
                 background-color: rgba(255,255,255,0.2);
 
                 .btn-primary{
-                    background-color: #FF8800;
-                    border-radius: .25rem;
                     display: block;
                 }
             }
@@ -99,7 +108,7 @@ html{
         }
         main {
             h1{
-                color: #5f3d15;
+                color: #291b0a;
             }
             #article_header{
                 margin-top: $margin_section;
@@ -112,7 +121,7 @@ html{
                 font-size: 1.25rem;
                 border: solid;
                 border-radius: 30px;
-                border-color: #80501A;
+                border-color: #5f3d18;
                 border-width: 5px;
                 padding: 10px;
             }
