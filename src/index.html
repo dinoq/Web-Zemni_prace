@@ -21,79 +21,106 @@
                 <div class="collapse navbar-collapse" id="collapsible-menu">
                     <ul class="navbar-nav nav nav-pills navbar-expanded" id="nav-ul">
                         <li class="nav-item active">
-                            <a href="#" class="nav-link active">Domů</a>
+                            <a href="#home-div" class="nav-link active">Domů</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">O nás</a>
+                            <a href="#about_reference" class="nav-link">O nás</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Naše stroje</a>
+                            <a href="#offer_reference" class="nav-link">Nabídka strojů</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Kontakt</a>
+                            <a href="#price_list_reference" class="nav-link">Ceník</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact_reference" class="nav-link">Kontakt</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <div class="jumbotron-fluid text-centered d-flex justify-content-center align-items-center" id="home-div">
-                <h1>Zemní práce - Martin Soušek</h1>
-                <button class="btn btn-primary">Více...</button>
+            
+            <div id="home-div" class="jumbotron-fluid text-centered d-flex justify-content-center align-items-center">
+                <div class="blur_bg d-flex justify-content-center align-items-center flex-column">
+                    <h1>Zemní práce - Martin Soušek</h1>
+                    <a href="#about_reference" class="btn btn-primary">Více...</a>   
+                </div>
             </div>
 
         </header>
-        <section>
-            <article id="about">
-                
+        <main>
+            <article id="about" class="d-flex justify-content-center">
+                <div id="about_reference" class="reference"></div>
+                <div id="about_div" class="text-center d-flex flex-column align-items-center">
+                    <div id="article_header">
+                        <h1>O nás</h1>
+                    </div>
+                    <div id="article_content">
+                        <p>
+                            Provádíme zemní práce, výkopy základů, jímek, inženýrských sítí, úpravy pozemků i zahrad.
+                        </p>
+                        <p>
+                            Na převoz materiálu používáme nákladní vůz. Pracujeme dle potřeb zákazníka.
+                        </p>
+                    </div>
+                </div>
             </article>
-            <article id="offer">
-                
+            <article id="offer" class="d-flex justify-content-center">
+                <div id="offer_reference" class="reference"></div>
+                <div id="offer_div" class="text-center d-flex flex-column align-items-center">
+                    <div id="article_header">
+                        <h1>Nabídka strojů</h1>
+                    </div>
+                    <div id="article_content">
+                        <p>
+                            Provádíme zemní práce, výkopy základů, jímek, inženýrských sítí, úpravy pozemků i zahrad.
+                        </p>
+                        <p>
+                            Na převoz materiálu používáme nákladní vůz. Pracujeme dle potřeb zákazníka.
+                        </p>
+                    </div>
+                </div>
             </article>
-            <article id="contact">
-                
+            <article id="price_list" class="d-flex justify-content-center">
+                <div id="price_list_reference" class="reference"></div>
+                <div id="price_list_div" class="text-center d-flex flex-column align-items-center">
+                    <div id="article_header">
+                        <h1>Ceník</h1>
+                    </div>
+                    <div id="article_content">
+                        <p>
+                            Provádíme zemní práce, výkopy základů, jímek, inženýrských sítí, úpravy pozemků i zahrad.
+                        </p>
+                        <p>
+                            Na převoz materiálu používáme nákladní vůz. Pracujeme dle potřeb zákazníka.
+                        </p>
+                    </div>
+                </div>
             </article>
 
-        </section>
+        </main>
 
 
         <footer>
-
+            <article id="contact_list" class="d-flex justify-content-center">
+                <div id="contact_reference" class="reference"></div>
+                <div id="contact_div" class="text-center d-flex flex-column align-items-center">
+                    <div id="article_header">
+                        <h1>Kontakt</h1>
+                    </div>
+                    <div id="article_content">
+                        <p>
+                            Provádíme zemní práce, výkopy základů, jímek, inženýrských sítí, úpravy pozemků i zahrad.
+                        </p>
+                        <p>
+                            Na převoz materiálu používáme nákladní vůz. Pracujeme dle potřeb zákazníka.
+                        </p>
+                    </div>
+                </div>
+            </article>
         </footer>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        <script>
-            $(function() {
-
-                // Scroll "animations" (changing of class ->transitions)
-                $(window).scroll(function(event){
-                    var scrollPos = $(window).scrollTop();
-                    var scrollTolerance = 5;
-
-                    //if user have scrolled up
-                    if(scrollPos < scrollTolerance){
-                        //Push menu to center
-                        switchClasses('navbar-shrinked', 'navbar-expanded', '#nav-ul');
-                        switchClasses('brand-shrinked', 'brand-expanded', '#brand');
-
-                    //if user have scrolled down                 
-                    }else{
-                        //Push menu to right
-                        switchClasses('navbar-expanded', 'navbar-shrinked', '#nav-ul');
-                        switchClasses('brand-expanded', 'brand-shrinked', '#brand');
-                    }
-                });
-            });
-
-            //Function remove one class and add another to element specified by third parameter
-            function switchClasses(classToRemove, classToAdd, elementSelector){
-                if($(elementSelector).hasClass(classToRemove)){
-                    $(elementSelector).removeClass(classToRemove);
-                }
-                if(!$(elementSelector).hasClass(classToAdd)){
-                    $(elementSelector).addClass(classToAdd);
-                }
-
-            }
-        </script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>

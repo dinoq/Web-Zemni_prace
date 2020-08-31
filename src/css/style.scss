@@ -9,78 +9,129 @@ $h2: 50px;
     -o-transition: all $time;
     transition: all $time;
 }
-body{
-    height: 2000px;
-    background-color: rgb(199, 200, 235);
-    letter-spacing: 1px;
 
-    nav{
-        font-family: Georgia, Times, "Times New Roman", serif;
-        @include transition_all($transition_time);
-        .navbar-brand{     
-            font-family: Impact;       
-            @include transition_all($transition_time);
-        }
-        .brand-expanded{
-            font-size: 1.5rem;
-        }
-        .brand-shrinked{
-            font-size: 1rem;
-        }   
-
-        #nav-ul{
-            @include transition_all($transition_time);
-            margin: 0 auto; 
-            .nav-link{
-                @include transition_all($transition_time/4);
-            }
-
-            .nav-link:hover, .active{
-                background-color: #FF8800;
-                border-radius: .25rem;
-            }
-        }
-
-        .navbar-expanded{
-            height: 78px;  
-            margin-right: 40% !important;  
-
-            .nav-item{    
-                margin: 0 20px;    
-                .nav-link{
-                    padding: calc((70px - 1rem) / 2) .5rem;
-                }
-            }
-        }
-        .navbar-shrinked{
-            height: 58px;  
-            margin-right: 30px !important;      
-            .nav-item{    
-                margin: 0 4px;          
-                .nav-link{
-                    padding: calc((50px - 1rem) / 2) .5rem;
-                }
-            }
-        }  
+html{    
+    scroll-behavior: smooth;
+    h1{
+        font-family: Impact;
     }
+    body{
+        height: 4000px;
+        background-color: #E1E1E1;
+        letter-spacing: 1px;
 
-    #home-div{
-        min-height: 1000px; //smazat
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/bg1.jpeg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: relative;
-        offset-position: 50px;
-        color: white;
-        h1{
-            font-family: Impact;
+        nav{
+            @include transition_all($transition_time);
+            .navbar-brand{     
+                font-family: Impact;       
+                @include transition_all($transition_time);
+            }
+            .brand-expanded{
+                font-size: 1.5rem;
+            }
+            .brand-shrinked{
+                font-size: 1rem;
+            }   
+
+            #nav-ul{
+                @include transition_all($transition_time);
+                margin: 0 auto; 
+                .nav-link{
+                    @include transition_all($transition_time/4);
+                }
+
+                .nav-link:hover, .active{
+                    background-color: #FF8800;
+                    border-radius: .25rem;
+                }
+            }
+
+            .navbar-expanded{
+                height: 78px;  
+                margin-right: 40% !important;  
+
+                .nav-item{    
+                    margin: 0 20px;    
+                    .nav-link{
+                        padding: calc((70px - 1rem) / 2) .5rem;
+                    }
+                }
+            }
+            .navbar-shrinked{
+                height: 58px;  
+                margin-right: 30px !important;      
+                .nav-item{    
+                    margin: 0 4px;          
+                    .nav-link{
+                        padding: calc((50px - 1rem) / 2) .5rem;
+                    }
+                }
+            }  
         }
-        .btn-primary{
-            background-color: #FF8800;
-            border-radius: .25rem;
+
+        #home-div{
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/bg1.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+            offset-position: 50px;
+            color: white;
+
+            .blur_bg{
+                backdrop-filter: blur(2px);
+                padding: 20px;
+                border-radius: 20px;
+                background-color: rgba(255,255,255,0.2);
+
+                .btn-primary{
+                    background-color: #FF8800;
+                    border-radius: .25rem;
+                    display: block;
+                }
+            }
+        }
+        .reference{
             display: block;
+            position: relative;
+            top: -74px;
+            visibility: hidden;
         }
-    }
+        main {
+            h1{
+                color: #5f3d15;
+            }
+            #article_header{
+                margin-top: 30px;
 
+            }
+
+            #article_content{
+                margin-top: 20px;
+                font-family: Georgia, Times, "Times New Roman", serif;
+                font-size: 1.25rem;
+            }
+            
+            #about {
+                #article_content{
+                    margin-top: 20px;
+                    border: solid;
+                    border-radius: 30px;
+                    border-color: #80501A;
+                    border-width: 5px;
+                    max-width: 50%;
+
+                    p{
+                        font-size: 1.5rem;
+                        font-family: Impact;
+                    }
+                }
+            }
+        }
+        footer{
+            color: #fff;
+            background-color: #1E1E1E;
+        }
+
+    }
 }
