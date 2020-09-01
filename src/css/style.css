@@ -1,9 +1,25 @@
+html:root {
+  --animate-delay: 0.1s;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
+html body {
+  position: relative;
+}
+
 html h1 {
   font-family: Impact;
+}
+
+html .no_visible_container img {
+  opacity: 0.0;
+}
+
+html .no_visible * {
+  opacity: 0.0;
 }
 
 html .btn-primary {
@@ -56,30 +72,32 @@ html body nav #nav-ul .nav-link:hover, html body nav #nav-ul .active {
   border-radius: .25rem;
 }
 
-html body nav .navbar-expanded {
+html body nav .navigation-expanded {
   height: 78px;
-  margin-right: 40% !important;
 }
 
-html body nav .navbar-expanded .nav-item {
+html body nav .navigation-expanded .nav-item {
   margin: 0 20px;
 }
 
-html body nav .navbar-expanded .nav-item .nav-link {
+html body nav .navigation-expanded .nav-item .nav-link {
   padding: calc((70px - 1rem) / 2) 0.5rem;
 }
 
-html body nav .navbar-shrinked {
-  height: 58px;
-  margin-right: 30px !important;
-}
-
-html body nav .navbar-shrinked .nav-item {
-  margin: 0 4px;
-}
-
-html body nav .navbar-shrinked .nav-item .nav-link {
-  padding: calc((50px - 1rem) / 2) 0.5rem;
+@media only screen and (min-width: 1000px) {
+  html body nav .navigation-expanded {
+    height: 78px;
+  }
+  html body nav .navigation-shrinked {
+    height: 58px;
+    margin-right: 30px !important;
+  }
+  html body nav .navigation-shrinked .nav-item {
+    margin: 0 4px;
+  }
+  html body nav .navigation-shrinked .nav-item .nav-link {
+    padding: calc((50px - 1rem) / 2) 0.5rem;
+  }
 }
 
 html body #home-div {
@@ -93,15 +111,38 @@ html body #home-div {
   color: white;
 }
 
-html body #home-div .blur_bg {
+html body #home-div #logo {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+html body #home-div .logo_in_center {
+  position: static;
+  top: 10%;
+  left: 50%;
+  font-size: 2.5rem;
+}
+
+html body #home-div .logo_in_nav {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  z-index: 100000;
+  font-size: 1.5rem;
+}
+
+html body #home-div .blur {
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
+}
+
+html body #home-div .bg {
   padding: 20px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-html body #home-div .blur_bg .btn-primary {
+html body #home-div .bg .btn-primary {
   display: block;
 }
 
@@ -116,11 +157,11 @@ html body main h1 {
   color: #291b0a;
 }
 
-html body main #article_header {
+html body main .article_header {
   margin-top: 30px;
 }
 
-html body main #article_content {
+html body main .article_content {
   margin-top: 20px;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 1.25rem;
@@ -131,9 +172,104 @@ html body main #article_content {
   padding: 10px;
 }
 
-html body main #about #article_content p {
+html body main #about .article_content p {
   font-size: 1.5rem;
   font-family: Impact;
+}
+
+html body main .image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+html body main .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  right: 0;
+  background-color: #1E1E1E;
+  color: white;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  font-size: 1.1rem;
+}
+
+html body main .slideleft_container:hover .overlay {
+  width: 100%;
+}
+
+html body main .slideleft_container:hover .detail-btn {
+  display: none;
+}
+
+html body main .slideleft_container .detail-btn {
+  display: block;
+}
+
+html body main .slideleft_container {
+  position: relative;
+  width: 50%;
+}
+
+html body main .slideleft_container img {
+  max-width: 100%;
+}
+
+html body main .detail-btn {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  bottom: 2%;
+}
+
+html body main #photo_gallery #thumbnails_div {
+  overflow: hidden;
+}
+
+html body main #photo_gallery #thumbnails_div .img-row {
+  margin-top: 5px;
+}
+
+html body main #photo_gallery #thumbnails_div .img-row .portrait_img {
+  max-width: 19%;
+}
+
+html body main #photo_gallery #thumbnails_div .img-row .landscape_img {
+  max-width: 60%;
+}
+
+html body main #photo_gallery #thumbnails_div .img-row .img_thumbnail {
+  max-width: 100%;
+  max-height: 400px;
+  border: 1px solid;
+  border-radius: 15px;
+}
+
+html body main #photo_gallery #thumbnails_div .third-img-row {
+  margin-top: 5px;
+}
+
+html body main #photo_gallery #thumbnails_div .third-img-row .landscape_img_smaller {
+  max-width: 60%;
+}
+
+html body main #photo_gallery #thumbnails_div .third-img-row .portrait_img_smaller {
+  max-width: 19%;
+}
+
+html body main #photo_gallery #thumbnails_div .third-img-row .landscape_img {
+  max-width: 60%;
+}
+
+html body main #photo_gallery #thumbnails_div .third-img-row .img_thumbnail {
+  max-width: 100%;
+  max-height: 400px;
+  border: 1px solid;
+  border-radius: 15px;
 }
 
 html body footer {

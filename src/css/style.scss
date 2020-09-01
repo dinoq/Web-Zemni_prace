@@ -10,11 +10,23 @@ $margin_section: 30px;
     -o-transition: all $time;
     transition: all $time;
 }
-
+html:root {
+    --animate-delay: 0.1s;
+  }
 html{    
     scroll-behavior: smooth;
+    body {
+        position: relative;
+    }
     h1{
         font-family: Impact;
+    }
+    
+    .no_visible_container img{
+        opacity: 0.0;
+    }
+    .no_visible *{
+        opacity: 0.0;
     }
 
     .btn-primary{
@@ -43,7 +55,6 @@ html{
             .brand-shrinked{
                 font-size: 1rem;
             }   
-
             #nav-ul{
                 @include transition_all($transition_time);
                 margin: 0 auto; 
@@ -57,10 +68,7 @@ html{
                 }
             }
 
-            .navbar-expanded{
-                height: 78px;  
-                margin-right: 40% !important;  
-
+            .navigation-expanded{
                 .nav-item{    
                     margin: 0 20px;    
                     .nav-link{
@@ -68,16 +76,22 @@ html{
                     }
                 }
             }
-            .navbar-shrinked{
-                height: 58px;  
-                margin-right: 30px !important;      
-                .nav-item{    
-                    margin: 0 4px;          
-                    .nav-link{
-                        padding: calc((50px - 1rem) / 2) .5rem;
-                    }
+            //@include media-breakpoint-up(lg) {
+            @media only screen and (min-width: 1000px) {
+                .navigation-expanded{
+                    height: 78px;  
                 }
-            }  
+                .navigation-shrinked{
+                    height: 58px;  
+                    margin-right: 30px !important;      
+                    .nav-item{    
+                        margin: 0 4px;          
+                        .nav-link{
+                            padding: calc((50px - 1rem) / 2) .5rem;
+                        }
+                    }
+                }  
+            }
         }
 
         #home-div{
@@ -89,8 +103,26 @@ html{
             offset-position: 50px;
             color: white;
 
-            .blur_bg{
+            #logo{
+                @include transition_all($transition_time); 
+            }
+            .logo_in_center{
+                position: static;
+                top: 10%;
+                left: 50%;
+                font-size: 2.5rem;
+            }
+            .logo_in_nav{
+                position: fixed;
+                top: 15px;
+                left: 20px;
+                z-index: 100000;
+                font-size: 1.5rem;
+            }
+            .blur{                
                 backdrop-filter: blur(2px);
+            }
+            .bg{
                 padding: 20px;
                 border-radius: 20px;
                 background-color: rgba(255,255,255,0.2);
@@ -110,12 +142,12 @@ html{
             h1{
                 color: #291b0a;
             }
-            #article_header{
+            .article_header{
                 margin-top: $margin_section;
 
             }
 
-            #article_content{
+            .article_content{
                 margin-top: 20px;
                 font-family: Georgia, Times, "Times New Roman", serif;
                 font-size: 1.25rem;
@@ -127,10 +159,96 @@ html{
             }
             
             #about {
-                #article_content{
+                .article_content{
                     p{
                         font-size: 1.5rem;
                         font-family: Impact;
+                    }
+                }
+            }
+
+            .image {
+              display: block;
+              width: 100%;
+              height: auto;
+            }
+            
+            .overlay {
+              position: absolute;
+              bottom: 0;
+              left: 0%;
+              right: 0;
+              background-color: #1E1E1E;
+              color: white;
+              overflow: hidden;
+              width: 0;
+              height: 100%;
+              transition: .5s ease;
+              font-size: 1.1rem;
+            }
+            .slideleft_container:hover .overlay {
+                width: 100%;
+            }
+            .slideleft_container:hover .detail-btn {
+                display: none;
+            }
+
+            .slideleft_container .detail-btn {
+                display: block;
+            }
+
+            .slideleft_container{
+                position: relative;
+                width: 50%;
+                img{
+                    max-width: 100%;
+                }
+            }
+            .detail-btn{
+                position: absolute;
+                left: 25%;
+                right: 25%;
+                bottom: 2%;
+            }
+
+            #photo_gallery{
+
+                #thumbnails_div{                    
+                    overflow: hidden;
+                    .img-row{
+                        margin-top: 5px;
+                        .portrait_img {
+                            max-width: 19%;
+                        }
+        
+                        .landscape_img{
+                            max-width: 60%;
+                        }
+                        .img_thumbnail{
+                            max-width: 100%;
+                            max-height: 400px;
+                            border: 1px solid;
+                            border-radius: 15px;
+                        }
+                    }
+                    .third-img-row{
+                        margin-top: 5px;
+                        .landscape_img_smaller{
+                            max-width: 60%;
+                        }
+                        .portrait_img_smaller{
+                            max-width: 19%;
+                        }
+        
+                        .landscape_img{
+                            max-width: 60%;
+                        }
+                        .img_thumbnail{
+                            max-width: 100%;
+                            max-height: 400px;
+                            border: 1px solid;
+                            border-radius: 15px;
+                        }
                     }
                 }
             }
