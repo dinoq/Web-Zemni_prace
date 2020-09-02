@@ -72,10 +72,6 @@ html body nav #nav-ul .nav-link:hover, html body nav #nav-ul .active {
   border-radius: .25rem;
 }
 
-html body nav .navigation-expanded {
-  height: 78px;
-}
-
 html body nav .navigation-expanded .nav-item {
   margin: 0 20px;
 }
@@ -84,13 +80,13 @@ html body nav .navigation-expanded .nav-item .nav-link {
   padding: calc((70px - 1rem) / 2) 0.5rem;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 992px) {
   html body nav .navigation-expanded {
     height: 78px;
   }
   html body nav .navigation-shrinked {
     height: 58px;
-    margin-right: 30px !important;
+    margin-right: 20px !important;
   }
   html body nav .navigation-shrinked .nav-item {
     margin: 0 4px;
@@ -118,15 +114,36 @@ html body #home-div #logo {
 
 html body #home-div .logo_in_center {
   position: static;
-  top: 10%;
-  left: 50%;
   font-size: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body #home-div .logo_in_center #logo_2 {
+  display: none;
+}
+
+@media only screen and (min-width: 576px) {
+  html body #home-div .logo_in_center {
+    display: block;
+  }
+  html body #home-div .logo_in_center #logo_2 {
+    display: inline;
+  }
 }
 
 html body #home-div .logo_in_nav {
   position: fixed;
-  top: 15px;
-  left: 20px;
+  top: 15px !important;
+  left: 20px !important;
   z-index: 100000;
   font-size: 1.5rem;
 }
@@ -212,7 +229,25 @@ html body main .slideleft_container .detail-btn {
 
 html body main .slideleft_container {
   position: relative;
-  width: 50%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 470px) {
+  html body main .slideleft_container {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  html body main .slideleft_container {
+    width: 65%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  html body main .slideleft_container {
+    width: 55%;
+  }
 }
 
 html body main .slideleft_container img {
@@ -286,6 +321,10 @@ html body footer ul {
   margin-top: 4rem;
   list-style-type: none;
   font-size: 1.5rem;
+}
+
+html body footer ul li {
+  word-break: break-word;
 }
 
 html body footer form textarea {

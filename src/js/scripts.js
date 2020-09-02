@@ -1,4 +1,9 @@
 $(function() {
+    //remove wz add
+    if($("body div")[0] != $("body #collapsible-menu")[0]){
+        $("body div").eq(0).css("display", "none")
+    }
+    
     //Init page
     init();
 
@@ -20,6 +25,12 @@ $(function() {
         }else{
             //Push menu to right
             switchClasses('navigation-expanded', 'navigation-shrinked', '#nav-ul');
+            if($("#logo").hasClass("logo_in_center")){
+                var top = $("#logo").offset()["top"];
+                var left = $("#logo").offset()["left"];
+                $("#logo").css("top", top-scrollPos);
+                $("#logo").css("left", left);
+            }
             switchClasses('logo_in_center', 'logo_in_nav', '#logo');
             $("#blurred_bg").removeClass("blur");
     
