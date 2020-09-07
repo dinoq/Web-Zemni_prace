@@ -1,3 +1,13 @@
+@font-face {
+  font-family: Georgia_font;
+  src: url("../font/Georgia.ttf");
+}
+
+@font-face {
+  font-family: Impact_font;
+  src: url("../font/impact.ttf");
+}
+
 html:root {
   --animate-delay: 0.1s;
 }
@@ -11,7 +21,7 @@ html body {
 }
 
 html h1 {
-  font-family: Impact;
+  font-family: Impact_font;
 }
 
 html .no_visible_container img {
@@ -43,7 +53,7 @@ html body nav {
 }
 
 html body nav .navbar-brand {
-  font-family: Impact;
+  font-family: Impact_font;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -145,7 +155,13 @@ html body #home-div .logo_in_nav {
   top: 15px !important;
   left: 20px !important;
   z-index: 100000;
-  font-size: 1.5rem;
+  font-size: 5vw;
+}
+
+@media only screen and (min-width: 470px) {
+  html body #home-div .logo_in_nav {
+    font-size: 1.5rem;
+  }
 }
 
 html body #home-div .blur {
@@ -180,7 +196,7 @@ html body main .article_header {
 
 html body main .article_content {
   margin-top: 20px;
-  font-family: Georgia, Times, "Times New Roman", serif;
+  font-family: Georgia_font, Times, "Times New Roman", serif;
   font-size: 1.25rem;
   border: solid;
   border-radius: 30px;
@@ -191,7 +207,7 @@ html body main .article_content {
 
 html body main #about .article_content p {
   font-size: 1.5rem;
-  font-family: Impact;
+  font-family: Impact_font;
 }
 
 html body main .image {
@@ -311,6 +327,16 @@ html body footer {
   color: #fff;
   background-color: #1E1E1E;
   margin-top: 30px;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 470px) {
+  html body footer {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
 }
 
 html body footer h1, html body footer h2 {
@@ -329,5 +355,9 @@ html body footer ul li {
 
 html body footer form textarea {
   width: 100%;
+}
+
+html body footer form input, html body footer form textarea {
+  max-width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

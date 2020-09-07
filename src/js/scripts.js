@@ -3,7 +3,7 @@ $(function() {
     if($("body div")[0] != $("body #collapsible-menu")[0]){
         $("body div").eq(0).css("display", "none")
     }
-    
+    //$("textarea").text($(window).innerHeight() + " " + $(window).innerWidth());
     //Init page
     init();
 
@@ -47,13 +47,13 @@ $(function() {
             $(".slideleft_container").eq(1).addClass("animate__animated " + anim_speed + " animate__" + anim);
         }
         
-        var animHeight = $(window).innerHeight() * (4/5);
+        var animHeight = $(window).innerHeight();
         for(var i = 0; i < $("#thumbnails_div").children().length; i++){
             for(var j = 0; j < $("#thumbnails_div").children().eq(i).children().length; j++){
                 //Animate
                 if((scrollPos + animHeight) > $("#thumbnails_div").children().eq(i).children().eq(j).children().eq(0).offset()["top"]){        
-                    $("#thumbnails_div").children().eq(i).children().eq(j).children().eq(0).addClass("animate__animated");   
-                    $("#thumbnails_div").children().eq(i).children().eq(j).children().eq(0).addClass("animate__faster");
+                    $("#thumbnails_div").children().eq(i).children().eq(j).children().eq(0).children().eq(0).addClass("animate__animated");   
+                    $("#thumbnails_div").children().eq(i).children().eq(j).children().eq(0).children().eq(0).addClass("animate__faster");
                 }
                 /*
                 if(scrollPos > $("#thumbnails_div").children().eq(i).children().eq(j).children().eq(0).offset()["top"]){
@@ -67,13 +67,13 @@ $(function() {
             if((scrollPos + animHeight) > $("#thumbnails_div").children().eq(i).children().eq(0).children().eq(0).offset()["top"]){ 
                 $(".img-row").eq(i).removeClass("no_visible_container")
                 //$("#thumbnails_div").children().eq(i).children().eq(0).children().eq(0).addClass("animate__delay-2s");
-                $("#thumbnails_div").children().eq(i).children().eq(1).children().eq(0).addClass("animate__delay-2s");
-                $("#thumbnails_div").children().eq(i).children().eq(2).children().eq(0).addClass("animate__delay-4s");
+                $("#thumbnails_div").children().eq(i).children().eq(1).children().eq(0).children().eq(0).addClass("animate__delay-2s");
+                $("#thumbnails_div").children().eq(i).children().eq(2).children().eq(0).children().eq(0).addClass("animate__delay-4s");
                 
                 var anim = "backInLeft";
-                $("#thumbnails_div").children().eq(i).children().eq(0).children().eq(0).addClass("animate__" + anim);
-                $("#thumbnails_div").children().eq(i).children().eq(1).children().eq(0).addClass("animate__" + anim);
-                $("#thumbnails_div").children().eq(i).children().eq(2).children().eq(0).addClass("animate__" + anim);
+                $("#thumbnails_div").children().eq(i).children().eq(0).children().eq(0).children().eq(0).addClass("animate__" + anim);
+                $("#thumbnails_div").children().eq(i).children().eq(1).children().eq(0).children().eq(0).addClass("animate__" + anim);
+                $("#thumbnails_div").children().eq(i).children().eq(2).children().eq(0).children().eq(0).addClass("animate__" + anim);
 
             }
         }

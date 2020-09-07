@@ -1,5 +1,4 @@
 <?php     
-mb_internal_encoding("UTF-8");
 
 if(empty($_POST['name'])  || 
    empty($_POST['email']) || 
@@ -12,34 +11,25 @@ $name = $_POST['name'];
 $emailFrom = $_POST['email']; 
 $message = $_POST['msg']; 
 
-$header = 'From:dinokino@seznam.cz';
+$header = 'From:email@seznam.cz';
 $header .= "\nMIME-Version: 1.0\n";
 $header .= "Content-Type: text/html; charset=\"utf-8\"\n";
-$emailTo = 'marek.petr10@seznam.cz';
+$emailTo = 'veselebagrovani@seznam.cz';
 
-$email_subject = "Zpráva z webu zemnipracesousek.cz od: $name\n$emailFrom\n$message";
-$email_body = "Zpráva z webu zemnipracesousek.cz ";
+$email_subject = "Zpráva z webu zemnipracesousek.cz";
+$email_body = "Zpráva z webu zemnipracesousek.cz \nJméno: $name\nEmail: $emailFrom\nZpráva:\n $message";
+$message = wordwrap($email_body,70);
 
-$uspech = mb_send_mail($emailFrom, $email_subject, $email_body);
+$uspech = mb_send_mail($emailTo, $email_subject, $message);
 if ($uspech)
 {
     $hlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme.';
+    echo("Vase zprava byla odeslana, brzy se Vam ozveme. <br><a href=\"../index.html\">Zpet</a> na hlavni stranku...");
 }
 else{
     $hlaska = 'Email se nepodařilo odeslat. Zkontrolujte adresu.';
+    echo("Vasi zpravu se nepodarilo odeslat! <br><a href=\"../index.html\">Zpet</a> na hlavni stranku...");
 }
-$email_subject = "Zpráva z webu zemnipracesousek.cz od:";
-$email_body = "Zpráva z webu zemnipracesousek.cz ";
-
-$uspech = mb_send_mail($emailFrom, $email_subject, $email_body);
-if ($uspech)
-{
-    $hlaska = 'Email byl úspěšně odeslán, brzy vám odpovíme.';
-}
-else{
-    $hlaska = 'Email se nepodařilo odeslat. Zkontrolujte adresu.';
-}
-echo($hlaska);
 /*
 error_reporting(-1);
 ini_set('display_errors', 'On');

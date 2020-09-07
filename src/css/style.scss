@@ -9,7 +9,15 @@ $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
-
+@font-face {
+    font-family: Georgia_font;
+    src: url("../font/Georgia.ttf");
+}
+@font-face {
+    font-family: Impact_font;
+    src: url("../font/impact.ttf");
+}
+  
 @mixin transition_all($time) {
     -webkit-transition: all $time;
     -moz-transition: all $time;
@@ -25,7 +33,7 @@ html{
         position: relative;
     }
     h1{
-        font-family: Impact;
+        font-family: Impact_font;
     }
     
     .no_visible_container img{
@@ -52,7 +60,7 @@ html{
         nav{
             @include transition_all($transition_time);
             .navbar-brand{     
-                font-family: Impact;       
+                font-family: Impact_font;       
                 @include transition_all($transition_time);
             }
             .brand-expanded{
@@ -134,7 +142,10 @@ html{
                 top: 15px !important;
                 left: 20px !important;
                 z-index: 100000;
-                font-size: 1.5rem;
+                font-size: 5vw;
+                @media only screen and (min-width: $xxs){
+                    font-size: 1.5rem;
+                }
             }
             .blur{                
                 backdrop-filter: blur(2px);
@@ -166,7 +177,7 @@ html{
 
             .article_content{
                 margin-top: 20px;
-                font-family: Georgia, Times, "Times New Roman", serif;
+                font-family: Georgia_font, Times, "Times New Roman", serif;
                 font-size: 1.25rem;
                 border: solid;
                 border-radius: 30px;
@@ -179,7 +190,7 @@ html{
                 .article_content{
                     p{
                         font-size: 1.5rem;
-                        font-family: Impact;
+                        font-family: Impact_font;
                     }
                 }
             }
@@ -283,6 +294,11 @@ html{
             color: #fff;
             background-color: #1E1E1E;
             margin-top: $margin_section;
+            overflow: hidden;
+            max-width: 100%;
+            @media screen and (max-width: $xxs){
+                width: fit-content;
+            }
             h1, h2{
                 color: #FF8800;
             }
@@ -298,6 +314,9 @@ html{
             form{
                 textarea{
                     width: 100%;
+                }
+                input, textarea{
+                    max-width: 100%;
                 }
             }
         }
